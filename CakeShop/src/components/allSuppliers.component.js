@@ -6,8 +6,6 @@ import TopBar from './topbar.component'
 import Header from './header.component'
 import img1 from '../assets/img/about.jpg'
 import "../assets/css/style.css"
-
-import $ from 'jquery';
 import HeroSection from './heroSection.component';
 
 export default class AllSuppliers extends Component{

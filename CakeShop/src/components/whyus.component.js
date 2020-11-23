@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import AOS from "aos";
 import "aos/dist/aos.css";
-import {Link} from 'react-router-dom';
 import "../assets/css/style.css"
 
 
-//import $ from 'jquery';
+
 
 export default class WhyUs extends Component{
   
@@ -15,8 +13,8 @@ return(
       <div className="container" data-aos="fade-up">
 
         <div className="section-title">
-          <h2>Why Us</h2>
-          <p>Why Choose Our Restaurant</p>
+          <h2>Our Cake Store</h2>
+          <p>Delicious Cakes Supplied by our suppliers</p>
         </div>
 
         <div className="row">

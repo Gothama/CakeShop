@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
-import AOS from "aos";
 import "aos/dist/aos.css";
 import {Link} from 'react-router-dom';
 import img1 from "../assets/img/logo.gif"
 import Swal from 'sweetalert2'
 import "../assets/css/style.css"
 
-import $ from 'jquery';
 
-export default class Navbar extends Component{
+export default class Header extends Component{
 
       logout() {
         localStorage.clear();

@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import AOS from "aos";
 import "aos/dist/aos.css";
-import {Link} from 'react-router-dom';
 import "../assets/css/style.css"
+import {Link} from 'react-router-dom';
 
-import $ from 'jquery';
 
 export default class Footer extends Component{
   
@@ -17,43 +15,29 @@ return(
 
           <div className="col-lg-3 col-md-6">
             <div className="footer-info">
-              <h3>Restaurantly</h3>
+              <h3>The Cake Factory</h3>
               <p>
-                A108 Adam Street <br/>
-                NY 535022, USA<br/><br/>
-                <strong>Phone:</strong> +1 5589 55488 55<br/>
-                <strong>Email:</strong> info@example.com<br/>
+                223/K <br/>
+                University of Moratuwa, Sri Lanka<br/><br/>
+                <strong>Phone:</strong> +97123213123<br/>
+                <strong>Email:</strong> cakefactory@gmail.com<br/>
               </p>
               <div className="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <Link to ="#" class="twitter"><i class="bx bxl-twitter"></i></Link>
+                <Link to ="#" class="facebook"><i class="bx bxl-facebook"></i></Link>
+                <Link to ="#" class="instagram"><i class="bx bxl-instagram"></i></Link>
+                <Link to ="#" class="google-plus"><i class="bx bxl-skype"></i></Link>
+                <Link to ="#" class="linkedin"><i class="bx bxl-linkedin"></i></Link>
               </div>
             </div>
           </div>
 
           <div className="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i className="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i className="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i className="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i className="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i className="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
+            
           </div>
 
           <div className="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i className="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i className="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i className="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i className="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i className="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
+           
           </div>
 
           <div className="col-lg-4 col-md-6 footer-newsletter">
@@ -71,11 +55,11 @@ return(
 
     <div className="container">
       <div className="copyright">
-        &copy; Copyright <strong><span>Restaurantly</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>The Cake Factory</span></strong>. All Rights Reserved
       </div>
       <div className="credits">
       
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by Gothama Rajawasam
       </div>
     </div>
   </footer>

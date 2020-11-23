@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
-import AOS from "aos";
+import {Carousel} from 'react-bootstrap';
 import "aos/dist/aos.css";
-import {Link} from 'react-router-dom';
 import img1 from "../assets/img/event-birthday.jpg";
 import img2 from "../assets/img/event-private.jpg";
 import img3 from "../assets/img/event-custom.jpg";
 import "../assets/css/style.css"
 
-import $ from 'jquery';
+
 
 export default class CakeTypes extends Component{
     
@@ -17,13 +16,15 @@ return(
       <div className="container" data-aos="fade-up">
 
         <div className="section-title">
-          <h2>Events</h2>
-          <p>Organize Your Events in our Restaurant</p>
+          <h2>Cake Types</h2>
+          <p>We have different types of delicious Cakes</p>
         </div>
 
-        <div className="owl-carousel events-carousel" data-aos="fade-up" data-aos-delay="100">
+       
 
-          <div className="row event-item">
+<Carousel>
+  <Carousel.Item>
+  <div className="row event-item" style={{height:"60vh"}}>
             <div className="col-lg-6">
               <img src={img1}className="img-fluid" alt=""/>
             </div>
@@ -45,10 +46,11 @@ return(
                 Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
                 velit esse cillum dolore eu fugiat nulla pariatur
               </p>
-            </div>
-          </div>
-
-          <div className="row event-item">
+            </div> </div>  
+        
+  </Carousel.Item>
+  <Carousel.Item>
+  <div className="row event-item" style={{height:"60vh"}}>
             <div className="col-lg-6">
               <img src={img2} className="img-fluid" alt=""/>
             </div>
@@ -72,8 +74,9 @@ return(
               </p>
             </div>
           </div>
-
-          <div className="row event-item">
+  </Carousel.Item>
+  <Carousel.Item>
+  <div className="row event-item" style={{height:"60vh"}}>
             <div className="col-lg-6">
               <img src={img3}className="img-fluid" alt=""/>
             </div>
@@ -97,8 +100,8 @@ return(
               </p>
             </div>
           </div>
-
-        </div>
+  </Carousel.Item>
+</Carousel>
 
       </div>
     </section>

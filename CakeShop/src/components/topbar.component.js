@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {Link} from 'react-router-dom';
 import "../assets/css/style.css"
 
 
@@ -54,8 +53,8 @@ return(
     <div id="topbar" className="d-flex align-items-center fixed-top">
     <div className="container d-flex">
       <div className="contact-info mr-auto">
-        <i className="icofont-phone"></i> +1 5589 55488 55
-        <span className="d-none d-lg-inline-block"><i className="icofont-clock-time icofont-rotate-180"></i> Mon-Sat: 11:00 AM - 23:00 PM</span>
+        <i className="icofont-phone"></i> +97-011-23342355
+        <span className="d-none d-lg-inline-block"><i className="icofont-clock-time icofont-rotate-180"></i> Mon-Sat - 9.00am - 11pm</span>
       </div>
       <div className="languages">
        

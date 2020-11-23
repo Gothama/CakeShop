@@ -7,8 +7,6 @@ cloudinary.config({
     cloud_name: "dbecgupu0",
     api_key: "373627428599719",
     api_secret: "5OjMXiYSBBHdf-MPUSHETJI5LOc"
-  
-  
   });
 
 

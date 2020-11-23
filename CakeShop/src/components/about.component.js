@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {Link} from 'react-router-dom';
 import backgroundim from '../assets/img/about.jpg'
 import Footer from './footer.component';
 import TopBar from './topbar.component'
 import Header from './header.component'
 import HeroSection from './heroSection.component'
 import "../assets/css/style.css"
-import $ from 'jquery';
+
 
 export default class Navbar extends Component{
     componentDidMount() {
