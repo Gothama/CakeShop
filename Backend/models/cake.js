@@ -1,12 +1,8 @@
 const mongoose = require('mongoose')
 
 const cakeSchema = new mongoose.Schema({
-    cakeID: {
-        type:Number,
-        required:true
-    },
 
-    bakerID: {
+    supplierID: {
         type:String,
         required:true
     },
@@ -28,7 +24,7 @@ const cakeSchema = new mongoose.Schema({
     addedDate:{
         type:Date,
         required:true,
-       // default:false
+       default:Date.now
     }
 });
 

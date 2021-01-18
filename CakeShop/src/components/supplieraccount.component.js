@@ -11,9 +11,10 @@ import Header from './header.component'
 import HeroSection from './heroSection.component'
 import "../assets/css/style.css"
 import axios from 'axios';
+import SupplierAccountHero from './supplierAccountHero';
 
 
-export default class Navbar extends Component{
+export default class SupplierAccount extends Component{
   state = {
           cakes: [],
       };
@@ -41,9 +42,9 @@ return(
   <div>
 
         <Header/>
-        <HeroSection/>
+        <SupplierAccountHero/>
         
-        <section id="why-us" className="why-us" style={{paddingTop:"170px"}}>
+        <section id="why-us" className="why-us" style={{}}>
           <div className="container" data-aos="fade-up">
 
             <div className="section-title">

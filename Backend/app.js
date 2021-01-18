@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const url ='mongodb://localhost/cakefactory'
+const url ='mongodb+srv://learningprogram:E1841349@practice.kyuvy.mongodb.net/thecakeshop?retryWrites=true&w=majority'
 
 const app = express()
 
@@ -17,7 +17,9 @@ app.use((req,res,next)=>{
     next();
 });
 
-mongoose.connect(url,{useNewUrlParser:true})
+mongoose.connect(url,{useNewUrlParser:true, useUnifiedTopology: true})
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
 const con = mongoose.connection
 
 con.once('open' , ()=>{
@@ -32,9 +34,15 @@ app.use('/ordering' , orderingRouter)
 const cakesRouter = require('./routes/cakes')
 app.use('/cakes' , cakesRouter)
 
-const userRouter = require('./routes/users')
-app.use('/users' , userRouter)
+const customerRouter = require('./routes/customer')
+app.use('/customer' , customerRouter)
 
-app.listen(9000,()=>{
-    console.log('server started')
+const supplierRouter = require('./routes/supplier')
+app.use('/supplier' , supplierRouter)
+
+const userRouter = require('./routes/user')
+app.use('/user' , userRouter)
+
+app.listen(9020,()=>{
+    console.log('server started on 9020')
 })

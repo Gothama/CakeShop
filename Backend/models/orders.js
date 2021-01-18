@@ -5,22 +5,27 @@ const ordersSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    bakerID: {
+    supplierID: {
         type:String,
         required:true
     },
-    cakeID: {
-        type:Number,
+    cakemodelID: {
+        type:String,
         required:true
     },
     orderDate:{
         type:Date,
-        required:true
+        required:true,
+        default:Date.now
     },
-    addedDate:{
+    requiredDate:{
         type:Date,
         required:true,
-       // default:false
+        default:Date.now
+    },
+    quantity: {
+        type:Number,
+        required:true
     }
 });
 

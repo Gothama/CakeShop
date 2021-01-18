@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../assets/css/style.css"
-import {Link} from 'react-router-dom';
 import {Accordion, Card} from 'react-bootstrap';
 
 
 
-export default class Menu extends Component{
+export default class UserDetails extends Component{
     componentDidMount() {
         AOS.init({duration: 1000,
         once:true});

@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Orders = require('../models/orders')
 
-
+//get all the orders in the system
 router.get('/', async(req,res) => {
     try{
            const orders = await Orders.find()
@@ -12,6 +12,7 @@ router.get('/', async(req,res) => {
     }
 })
 
+//get all the orders of a certain customer
 router.get('/customer/:cid', async(req,res) => {
     try{
             const cid = req.params.cid;
@@ -22,36 +23,55 @@ router.get('/customer/:cid', async(req,res) => {
     }
 })
 
-router.get('/baker/:bid', async(req,res) => {
+//get all the orders of a certain supplier
+router.get('/supplier/:supplierID', async(req,res) => {
     try{
-            const bid = req.params.bid;
-           const data = await Orders.find({bakerID:bid})
-           res.json(data)
+            const supplierID = req.params.supplierID;
+           const data = await Orders.find({supplierID:supplierID})
+           if(!data){
+               return res.json({msg: "There are no any orders for this supplier"});
+           }
+           else{
+                res.json(data)
+           }
+          
     }catch(err){
         res.send('Error ' + err)
     }
 })
 
 
-
+// add a order
 router.post('/norder', async(req,res) => {
     const order = new Orders({
         customerID: req.body.customerID,
-        bakerID: req.body.bakerID,
-        cakeID: req.body.cakeID,
+        supplierID: req.body.supplierID,
+        cakemodelID: req.body.cakemodelID,
         orderDate: req.body.orderDate,
-        addedDate: req.body.addedDate
+        requiredDate: req.body.requiredDate,
+        quantity:req.body.quantity
     })
 
     try{
         const a1 =  await order.save() 
+        
         res.json(a1)
-        res.send("Successfull")
+  
     }catch(err){
-        res.send('Error')
+        res.send('Error1' + err)
     }
 })
 
+//delete the order
+router.delete('/:orderID', async(req,res) => {
+    try{
+            const orderID = req.params.orderID;
+           const order = await Orders.findByIdAndDelete({_id:orderID})
+           res.json("Successfull")
+    }catch(err){
+        res.send('Error ' + err)
+    }
+  })
 
 
 module.exports = router

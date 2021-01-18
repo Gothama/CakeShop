@@ -16,8 +16,8 @@ return(
       <div className="container" data-aos="fade-up">
 
         <div className="section-title">
-          <h2>Cake Types</h2>
-          <p>We have different types of delicious Cakes</p>
+          <h2>Our Cakes</h2>
+          <p>Our Bakers produce different types of delicious Cakes</p>
         </div>
 
        

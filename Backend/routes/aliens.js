@@ -34,7 +34,7 @@ router.post('/', async(req,res) => {
         //res.json(a1)
         res.send("Successfull")
     }catch(err){
-        res.send('Error')
+        res.send('Error sfdsd')
     }
 })
 

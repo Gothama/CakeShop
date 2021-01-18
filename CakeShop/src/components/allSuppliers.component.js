@@ -7,11 +7,24 @@ import Header from './header.component'
 import img1 from '../assets/img/about.jpg'
 import "../assets/css/style.css"
 import HeroSection from './heroSection.component';
+import CakeTile from './caketile.component';
+import axios from 'axios';
 
 export default class AllSuppliers extends Component{
+  state={
+    cakes:[]
+  }
     componentDidMount() {
         AOS.init({duration: 1000,
         once:true});
+         axios.get(`http://localhost:9020/cakes/`)
+          .then(res => {
+            const cakes = res.data;
+             this.setState({ cakes });
+         })
+
+
+
         }
     render(){
 return(
@@ -59,30 +72,14 @@ return(
         </div>
         <br/>
         <div className="row">
+        { this.state.cakes.map(cake =>  
 
-<div className="col-lg-4">
-  <div className="box" data-aos="zoom-in" data-aos-delay="100">
-    <span>01</span>
-    <h4>Lorem Ipsum</h4>
-    <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
-  </div>
-</div>
-
-<div className="col-lg-4 mt-4 mt-lg-0">
-  <div className="box" data-aos="zoom-in" data-aos-delay="200">
-    <span>02</span>
-    <h4>Repellat Nihil</h4>
-    <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
-  </div>
-</div>
-
-<div className="col-lg-4 mt-4 mt-lg-0">
-  <div className="box" data-aos="zoom-in" data-aos-delay="300">
-    <span>03</span>
-    <h4> Ad ad velit qui</h4>
-    <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
-  </div>
-</div>
+            <CakeTile cImageUrl = {cake.cImageUrl} 
+            description={cake.ingrediants} 
+            cakeName={cake.cakeName} 
+            id={cake.cakeName}/>
+            
+        )}
 
 </div>
 
