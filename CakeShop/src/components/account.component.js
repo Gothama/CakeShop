@@ -3,10 +3,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import {Table} from 'react-bootstrap';
 
-import {Button,Card} from 'react-bootstrap';
-import CakeTile from './caketile.component';
+import {Button} from 'react-bootstrap';
+
 import Footer from './footer.component';
-import TopBar from './topbar.component'
+
 import Header from './header.component'
 import HeroSection from './heroSection.component'
 import "../assets/css/style.css"

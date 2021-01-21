@@ -2,18 +2,71 @@ const express = require('express')
 const router = express.Router()
 const Customer = require('../models/customer')
 const {check, validationResult }= require("express-validator");
+/*
+// get the customer password for customer ID
+router.post('/customerID', async(req,res) => {
+    try{
+        const customerID = req.body.customerID;
+        const password = req.body.password;
+        console.log(customerID);
+        console.log(password);
+       const data = await Customer.countDocuments({customerID:customerID,password:password})
+       if(data==1){
+           res.send({message:"verified"});
+           return;
+       }
+       else{
+        res.send({message:"Wrong"});
+        return;
+       }
+    }catch(err){
+        res.send('Error ' + err)
+    }
+})*/
+
 
 // get the customer password for customer ID
-router.get('/customerID', async(req,res) => {
+router.post('/customerID/:customerID/:password', function(req,res) {
+
+
+    const customerID = req.params.customerID;
+        const password = req.params.password;
+        Customer.findOne({ customerID: customerID, password: password },)
+        .exec()
+        .then(userValid =>{
+            if( userValid ){
+                res.status(200).json({"Message": userValid});
+            }else{
+                res.status(200).json({"Message": "unsuccessful"});
+            }
+        }).catch(err=>{
+        res.status(500).json(err);
+    })
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// get the customer password for customer ID
+router.get('/allDetails/:customerID', async(req,res) => {
     try{
-            const customerID = req.body.customerID;
-           const data = await Customer.find({}, {password:1 , customerID:customerID})
-            res.json(data);
+        const customerID = req.params.customerID;
+        console.log(customerID);
+    
+       const data = await Customer.findOne({customerID:customerID})
+       res.json(data);
     }catch(err){
         res.send('Error ' + err)
     }
 })
-
 
 // add new customer 
 router.post('/ncustomer', 

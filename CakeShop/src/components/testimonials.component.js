@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import img from '../../src/assets/img/testimonials/testimonials-1.jpg'
 import {Carousel} from 'react-bootstrap';
 import "aos/dist/aos.css";
-import img1 from "../assets/img/event-birthday.jpg";
-import img2 from "../assets/img/event-private.jpg";
-import img3 from "../assets/img/event-custom.jpg";
+
 import "../assets/css/style.css"
 
 export class Testimonials extends Component {

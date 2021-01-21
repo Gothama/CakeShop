@@ -21,6 +21,15 @@ const cakeSchema = new mongoose.Schema({
         required:true
     },
 
+    description:{
+        type:String,
+        required:true
+    },
+    price: {
+        type:String,
+        required:true
+    },
+
     addedDate:{
         type:Date,
         required:true,

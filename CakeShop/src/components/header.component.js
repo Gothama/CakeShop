@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import "aos/dist/aos.css";
 import {Link} from 'react-router-dom';
 import img1 from "../assets/img/logo.gif"
-import Swal from 'sweetalert2'
+
 import "../assets/css/style.css"
 
 
@@ -11,12 +11,14 @@ export default class Header extends Component{
       logout() {
         localStorage.clear();
         window.location.href = '/';
-        localStorage.setItem("username" , null);
-        localStorage.setItem("loggedIn" , null);
+        localStorage.removeItem("supplierID");
+        localStorage.removeItem("password");
+        localStorage.removeItem("loggedIn");
+        localStorage.removeItem("AccountType");
     }
 
     signIn(){
-      const { value: formValues } = Swal.fire({
+      /*const { value: formValues } = Swal.fire({
         title: 'Sign In',
         html:
           '<input type ="text" id="swal-input1" class="swal2-input" value="Username" required>' +
@@ -78,7 +80,7 @@ export default class Header extends Component{
             title: 'Signed in unsuccessfully'
           })
         }
-      })
+      })*/
       
      
     };
@@ -99,8 +101,10 @@ return(
    
           <li><Link to ="/allSuppliers">All Cakes</Link></li>
           <li><Link to ="/contact">Contact</Link></li>
-          {localStorage.getItem("loggedIn") ==="loggedIn"? <li ><a href="/account">Account</a></li> : <li></li>}
-          {localStorage.getItem("loggedIn") ==="loggedIn"? <li onClick = {this.logout} className="book-a-table text-center"><a href="#book-a-table">Sign Out</a></li>  :<li className="book-a-table text-center"><a href="#book-a-table" onClick={this.signIn}>Sign In</a></li> }
+
+       {localStorage.getItem("loggedIn") ==="loggedIn" && localStorage.getItem("AccountType") ==="Customer"? <li ><a href="/customerAccount">Account</a></li> : <li></li>}
+       {localStorage.getItem("loggedIn") ==="loggedIn" && localStorage.getItem("AccountType") ==="Supplier"? <li ><a href="/supplierAccount">Account</a></li> : <li></li>}
+          {localStorage.getItem("loggedIn") ==="loggedIn"? <li onClick = {this.logout} className="book-a-table text-center"><a href="#book-a-table">Sign Out</a></li>  :<li className="book-a-table text-center"><Link to="/signIn">Sign In</Link></li>} 
 
      
 

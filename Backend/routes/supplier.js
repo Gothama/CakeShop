@@ -3,15 +3,24 @@ const router = express.Router()
 const Supplier = require('../models/supplier')
 
 // get the supplier password for customer ID
-router.get('/:supplierID', async(req,res) => {
-    try{
+router.post('/supplierID/:supplierID/:password', function(req,res) {
+    
             const supplierID = req.params.supplierID;
-           const data = await Supplier.find({supplierID:supplierID})
-            res.json(data);
-    }catch(err){
-        res.send('Error ' + err)
-    }
-})
+            const password = req.params.password;
+            console.log(supplierID);
+            console.log(password);
+            Supplier.findOne({ supplierID: supplierID, password: password },)
+            .exec()
+            .then(userValid =>{
+                if( userValid ){
+                    res.status(200).json({"Message": userValid});
+                }else{
+                    res.status(200).json({"Message": "unsuccessful"});
+                }
+            }).catch(err=>{
+            res.status(500).json(err);
+        })
+    });
 
 
 // add new supplier 
@@ -22,7 +31,8 @@ router.post('/ncsupplier', async(req,res) => {
         telephoneNum: req.body.telephoneNum,
         address: req.body.address,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        name: req.body.name
     })
 
     try{
@@ -65,5 +75,19 @@ router.patch('/:supplierID', async(req,res) => {
         res.send('Error ' + err)
     }
   })
+
+  
+
+router.get('/allDetails/:supplierID', async(req,res) => {
+    try{
+        const supplierID = req.params.supplierID;
+        console.log(supplierID);
+    
+       const data = await Supplier.findOne({supplierID:supplierID})
+       res.json(data);
+    }catch(err){
+        res.send('Error ' + err)
+    }
+})
 
 module.exports = router

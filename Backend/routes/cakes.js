@@ -52,8 +52,9 @@ router.post('/ncake', async(req,res) => {
       cakeName: req.body.cakeName,
       description: req.body.description,
       ingrediants: req.body.ingrediants,
-      cImageUrl: req.body.cImageUrl
-      
+      cImageUrl: req.body.cImageUrl,
+      description: req.body.description,
+      price: req.body.price
   })
 
   try{

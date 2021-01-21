@@ -6,49 +6,34 @@ import '../src/assets/vendor/icofont/icofont.min.css';
 import  '../src/assets/vendor/boxicons/css/boxicons.min.css'; 
 import  '../src/assets/vendor/aos/aos.css'; 
 import  '../src/assets/vendor/venobox/venobox.min.css'; 
-//import '../src/assets/css/style.css'; 
+
 
 
 import LandingPage from "./components/landingpage.component";
 import Contact from "./components/contact.component";
 import AllSuppliers from "./components/allSuppliers.component";
 import Account from "./components/account.component";
-/*import AllEvents from "./components/all-events.component";
-import SignIn from "./components/sign-in.component";
-import SignUp from "./components/sign-up.component";
-
-import Account from "./components/account.dashboard.component";
-import HostEvent from "./components/account.addevent.component";
-import ViewHEvent from "./components/account.viewhostevent.components";*/
-
-
 import About from "./components/about.component";
-import SupplierAccount from './components/supplieraccount.component';
-
+import SupplierAccount from './components/supplierAccount/supplierAccount.component';
+import signInOut from './components/signIn.component';
+import { cakeDetail } from './components/cakeDetail.component';
+import CustomerAccount from './components/customerAccount/customerAccount.component'
 
 
 function App() {
 
   return (
     <Router>
-      
       <Route path = "/" exact component={LandingPage}/>
       <Route path = "/contact" exact component={Contact}/>
       <Route path = "/allSuppliers" exact component={AllSuppliers}/> 
       <Route path = "/about" exact component={About}/>
       <Route path = "/account" exact component={Account}/>
       <Route path ="/supplierAccount" exact component={SupplierAccount}/>
-     {/* <Route path = "/event/:eventId" exact component={Event}/>
-      
-      
-     
-      <Route path = "/signIn" exact component={SignIn}/>
-      <Route path = "/signUp" exact component={SignUp}/>
-      <Route path = "/account" exact component={Account}/>
-      <Route path = "/account/host" exact component={HostEvent}/>
-  <Route path = "/account/event/view/:id" exact component={ViewHEvent}/>*/}
-      
-    
+      <Route path ="/signIn" exact component={signInOut}/>
+      <Route path = "/cakeDetail/:cakeID" exact component = {cakeDetail}/>
+      <Route path ="/customerAccount" exact component={CustomerAccount}/>
+      <Route path ="/supplierAccount" exact component={SupplierAccount}/>
     </Router>
   );
 }

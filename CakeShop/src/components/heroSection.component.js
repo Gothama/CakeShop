@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Swal from 'sweetalert2'
+//import Swal from 'sweetalert2'
 import "../assets/css/style.css"
-import axios from 'axios';
+////import axios from 'axios';
+
 
 
 
@@ -15,7 +16,7 @@ export default class HeroSection extends Component{
         }
 
         signUp(){
-            
+           /* 
             const { value: formValues } = Swal.fire({
               title: 'Sign Up',
               html:
@@ -24,7 +25,7 @@ export default class HeroSection extends Component{
                 '<input type ="text" id="swal-input3" class="swal2-input" value="Username" required>'+
                 '<input type ="password" id="swal-input4" class="swal2-input"value="Password" required>'+
                 '<input type ="email" id="swal-input5" class="swal2-input"value="email@h.com" required>'+
-                '<textarea id="swal-input6" class="swal2-input"value="Address" required>Address'+'</textarea>'+
+                '<textarea id="swal-input6" class="swal2-input"value="Address" required>Address</textarea>'+
                 '<!--<input type="submit" id="submit" value="submit" style="color:white; background-color:blue">-->',
               focusConfirm: false,
               confirmButtonText: 'Sign In',
@@ -42,9 +43,8 @@ export default class HeroSection extends Component{
               var password = document.getElementById('swal-input4').value
               var email = document.getElementById('swal-input5').value
               var address = document.getElementById('swal-input6').value
-              if(name!="" && telephone!="" && username !="" && password !="" && email!="" && address!=""  ){
+              if(name!=="" && telephone!=="" && username !=="" && password !=="" && email!=="" && address!==""  ){
               const user = {
-       
                 userID: name,
                 userName: username,
                 telephoneNum: telephone,
@@ -52,7 +52,8 @@ export default class HeroSection extends Component{
                 email: email,
                 password: password
             };
-            axios.post("http://localhost:9000/users/nuser", user)
+            
+            axios.post("http://localhost:9020/customer/ncustomer", user)
                 .then(res => {
                   console.log(res)
                       console.log("okay");
@@ -80,10 +81,7 @@ export default class HeroSection extends Component{
                       
                      window.location.href="/"
            })
-        .catch(err => {console.log(err)
-     
-        }
-        );
+        .catch(err => {console.log(err)});
        }
        else{
          console.log("wrong")
@@ -150,8 +148,8 @@ export default class HeroSection extends Component{
                   icon: 'error',
                   title: 'Signed in unsuccessfully'
                 })
-              }*/
-            })
+              }
+            })*/
             
            
           };
@@ -166,7 +164,7 @@ return(
           <h2>Delivering great cakes to your door step from bakers around Srilanka!</h2>
 
           <div className="btns">
-            {localStorage.getItem("loggedIn") === "loggedIn"?<a ></a>:<a onClick={this.signUp} className="btn-menu animated fadeInUp scrollto">Sign Up</a>}
+            {localStorage.getItem("loggedIn") === "loggedIn"?<link to = ""></link>:<li onClick={this.signUp} className="btn-menu animated fadeInUp scrollto">Sign Up</li>}
           </div>
         </div>
        
