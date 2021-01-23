@@ -12,6 +12,18 @@ router.get('/', async(req,res) => {
     }
 })
 
+
+//get all the count
+router.get('/count', async(req,res) => {
+    try{
+           const count = await Orders.find().count();
+           res.json(count)
+    }catch(err){
+        res.send('Error ' + err)
+    }
+})
+
+
 //get all the orders of a certain customer
 router.get('/customer/:cid', async(req,res) => {
     try{

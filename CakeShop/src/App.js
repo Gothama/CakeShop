@@ -17,7 +17,7 @@ import About from "./components/about.component";
 import SupplierAccount from './components/supplierAccount/supplierAccount.component';
 import signInOut from './components/signIn.component';
 import CustomerAccount from './components/customerAccount/customerAccount.component'
-
+import AdminDashboard from './components/Admin/AdminDashboard.component'
 
 function App() {
 
@@ -31,6 +31,7 @@ function App() {
       <Route path ="/signIn" exact component={signInOut}/>
       <Route path ="/customerAccount" exact component={CustomerAccount}/>
       <Route path ="/supplierAccount" exact component={SupplierAccount}/>
+      <Route path = "/Admin" exact component ={AdminDashboard}/>
     </Router>
   );
 }

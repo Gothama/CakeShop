@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
-//import Swal from 'sweetalert2'
+import Swal from 'sweetalert2'
 import "../assets/css/style.css"
-////import axios from 'axios';
+import axios from 'axios';
 
 
 
@@ -16,7 +16,7 @@ export default class HeroSection extends Component{
         }
 
         signUp(){
-           /* 
+            
             const { value: formValues } = Swal.fire({
               title: 'Sign Up',
               html:
@@ -55,7 +55,7 @@ export default class HeroSection extends Component{
             
             axios.post("http://localhost:9020/customer/ncustomer", user)
                 .then(res => {
-                  console.log(res)
+                      console.log(res)
                       console.log("okay");
                       localStorage.setItem("username" , username);
                       localStorage.setItem("loggedIn" , "loggedIn");
@@ -104,9 +104,9 @@ export default class HeroSection extends Component{
           })
         }
        }
-          
+          /*
 
-              /*if(m==="okay" ){
+              if(m==="okay" ){
                 const Toast = Swal.mixin({
                   toast: true,
                   position: 'top-end',
@@ -148,8 +148,8 @@ export default class HeroSection extends Component{
                   icon: 'error',
                   title: 'Signed in unsuccessfully'
                 })
-              }
-            })*/
+              }*/
+            })
             
            
           };

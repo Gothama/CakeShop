@@ -2,6 +2,30 @@ const express = require('express')
 const router = express.Router()
 const Supplier = require('../models/supplier')
 
+
+
+//get all the Suppliers
+router.get('/', async(req,res) => {
+    try{
+           const supplier = await Supplier.find()
+           res.json(supplier)
+    }catch(err){
+        res.send('Error ' + err)
+    }
+})
+
+//get all the count
+router.get('/count', async(req,res) => {
+    try{
+           const count = await Supplier.find().count();
+           res.json(count)
+    }catch(err){
+        res.send('Error ' + err)
+    }
+})
+
+
+
 // get the supplier password for customer ID
 router.post('/supplierID/:supplierID/:password', function(req,res) {
     

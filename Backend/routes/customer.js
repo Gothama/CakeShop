@@ -25,6 +25,27 @@ router.post('/customerID', async(req,res) => {
 })*/
 
 
+//get all the customers
+router.get('/', async(req,res) => {
+    try{
+           const customer = await Customer.find()
+           res.json(customer)
+    }catch(err){
+        res.send('Error ' + err)
+    }
+})
+
+//get all the count
+router.get('/count', async(req,res) => {
+    try{
+           const count = await Customer.find().count();
+           res.json(count)
+    }catch(err){
+        res.send('Error ' + err)
+    }
+})
+
+
 // get the customer password for customer ID
 router.post('/customerID/:customerID/:password', function(req,res) {
 
