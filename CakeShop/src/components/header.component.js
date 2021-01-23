@@ -17,73 +17,10 @@ export default class Header extends Component{
         localStorage.removeItem("AccountType");
     }
 
-    signIn(){
-      /*const { value: formValues } = Swal.fire({
-        title: 'Sign In',
-        html:
-          '<input type ="text" id="swal-input1" class="swal2-input" value="Username" required>' +
-          '<input type ="password" id="swal-input2" class="swal2-input"value="Password" required>'+
-          '<!--<input type="submit" id="submit" value="submit" style="color:white; background-color:blue">-->',
-        focusConfirm: false,
-        confirmButtonText: 'Sign In',
-        preConfirm: () => {
-          return [
-            document.getElementById('swal-input1').value,
-            document.getElementById('swal-input2').value,
-            //window.alert(document.getElementById('swal-input1').value)
-          ]
-        }
-      }).then(value=>{
-        if(document.getElementById('swal-input1').value == "Gothama"){
-          const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.addEventListener('mouseenter', Swal.stopTimer)
-              toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-          })
-          var k = document.getElementById('swal-input1').value;
-          Toast.fire({
-              icon: 'success',
-              title: 'Signed in successfully'
-            })
-          localStorage.clear();
-          
-          localStorage.setItem("username" , k);
-          localStorage.setItem("loggedIn" , "loggedIn");
 
-          
-         window.location.href="/"
-          
-        
-          
-        }
-        else{
-          const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.addEventListener('mouseenter', Swal.stopTimer)
-              toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-          })
-          
-          Toast.fire({
-            icon: 'error',
-            title: 'Signed in unsuccessfully'
-          })
-        }
-      })*/
       
      
-    };
+ 
  
     render(){
 return(

@@ -45,7 +45,10 @@ return(
                   addedDate={cake.addedDate} 
                   cakeName={cake.cakeName} 
                   price={cake.price} 
-                  id={cake.id}/>
+                  id={cake.id}
+                  ingrediants = {cake.ingrediants}
+                  description = {cake.description}
+                  />
               
               )}
             </div>

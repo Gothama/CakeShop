@@ -44,7 +44,7 @@ router.delete('/:cakeID', async(req,res) => {
   }
 })
 
-
+/*
 //add a new cake model to the system
 router.post('/ncake', async(req,res) => {
   const cake = new Cakes({
@@ -66,6 +66,71 @@ router.post('/ncake', async(req,res) => {
 
   }
 })
+
+//add a new cake model to the system
+router.post('/ncake', (req,res,next)=>{ 
+  try{
+
+  
+  const cake = new Cakes({
+      supplierID: req.body.supplierID,
+      cakeName: req.body.cakeName,
+      description: req.body.description,
+      ingrediants: req.body.ingrediants,
+      cImageUrl: req.body.cImageUrl,
+      description: req.body.description,
+      price: req.body.price
+  })
+
+  const a1 =   cake.save() 
+  console.log(a1)
+  res.status(200).send("Successfull");
+
+
+}
+catch(err){
+  res.send('Error ' + err)
+}
+
+})
+
+router.post('/ncake/:supplierID/:cakeName/:description/:ingrediants/:cImageUrl/:price', function(req,res){
+  try{
+
+  
+  const cake = new Cakes({
+      supplierID: req.params.supplierID,
+      cakeName: req.params.cakeName,
+      description: req.params.description,
+      ingrediants: req.params.ingrediants,
+      cImageUrl: req.params.cImageUrl,
+      price: req.params.price
+  })
+
+  const a1 =   cake.save() 
+  console.log(a1)
+  res.status(200).send("Successfull");
+
+
+}
+catch(err){
+  res.send('Error ' + err)
+}
+
+})
+*/
+router.route('/ncake').post(function (req,res) {
+  console.log("Apppooo")
+  let  cake = new Cakes(req.body);
+  cake.save()
+      .then(sup=>{
+          console.log("Succc")
+          res.status(200).json({'appoinment':'successful'});
+      }).catch(err=>{
+      console.log(err)
+      res.status(400).send('fail');
+  });
+});
 
 //all cakes of a certain supplier
 router.get('/baker/:supplierID', async(req,res) => {

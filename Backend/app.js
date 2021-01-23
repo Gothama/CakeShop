@@ -1,8 +1,12 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const bodyParser=require('body-parser');
 const url ='mongodb+srv://learningprogram:E1841349@practice.kyuvy.mongodb.net/thecakeshop?retryWrites=true&w=majority'
 
 const app = express()
+
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 
 app.use((req,res,next)=>{
     res.header("Access-Control-Allow-Origin", "*");

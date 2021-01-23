@@ -16,7 +16,6 @@ import Account from "./components/account.component";
 import About from "./components/about.component";
 import SupplierAccount from './components/supplierAccount/supplierAccount.component';
 import signInOut from './components/signIn.component';
-import { cakeDetail } from './components/cakeDetail.component';
 import CustomerAccount from './components/customerAccount/customerAccount.component'
 
 
@@ -29,9 +28,7 @@ function App() {
       <Route path = "/allSuppliers" exact component={AllSuppliers}/> 
       <Route path = "/about" exact component={About}/>
       <Route path = "/account" exact component={Account}/>
-      <Route path ="/supplierAccount" exact component={SupplierAccount}/>
       <Route path ="/signIn" exact component={signInOut}/>
-      <Route path = "/cakeDetail/:cakeID" exact component = {cakeDetail}/>
       <Route path ="/customerAccount" exact component={CustomerAccount}/>
       <Route path ="/supplierAccount" exact component={SupplierAccount}/>
     </Router>

@@ -4,46 +4,104 @@ import axios from 'axios';
 
 
 
+
 export default class SupAddCakeModel extends Component{
+  /*  
+      constructor(props){
+          super(props); 
+          
+
+      this.onChangeCakeName = this.onChangeCakeName.bind(this);
+      this.onChangeImageURL = this.onChangeImageURL.bind(this);
+      this.onChangeDescription = this.onChangeDescription.bind(this);
+      this.onChangePrice = this.onChangePrice.bind(this);
+      this.onChangeIngredients = this.onChangeIngredients.bind(this);
+      this.handleSubmit= this.handleSubmit.bind(this);*/
     
-      constructor(){
-          super();
-          this.state={
-        customerID:[],
-        telephoneNum:[],
-        address:[],
-        email:[],
-        password:[],
-        name:[]
-      }
+
+    state={
+        supplierID:localStorage.getItem("supplierID"),
+        cimageURL:"",
+        description:"",
+        price:"",
+        cakeName:"",
+        ingrediants:""
+      };
+     
+     
         
-        let supplierID = localStorage.getItem("supplierID");
-        axios.get('http://localhost:9020/supplier/allDetails/' + supplierID).then(res=>{
-            console.log(res);
-            this.setState({ customerID:res.data["supplierID"],
-            telephoneNum:res.data["telephoneNum"],
-            address:res.data["address"],
-            email:res.data["email"],
-            password:res.data["password"],
+    
+
+    onChangeCakeName = e=> {
+      this.setState({
+
+        cakeName: e.target.value
+      });}
+
+      onChangecImageURL = e=>{
+      this.setState({
+  
+        cimageURL: e.target.value
+      });}
+      onChangeDescription = e=> {
+      this.setState({
+    
+        description: e.target.value
+      });}
+
+      onChangePrice = e=> {
+        this.setState({
+      
+          price: e.target.value
+      });}
+      onChangeIngrediants = e=> {
+        this.setState({
+  
+          ingrediants: e.target.value
+        });}
         
+        handleSubmit= event =>  {
+          event.preventDefault();
         
-        });
-            console.log(this.state.customerID );
-            //window.alert("Okay");
-        }).catch(err => console.log(err));
-      }
+
+          console.log("okay");
+         
+          const cake = {
+             supplierID:this.state.supplierID,
+             cImageUrl:this.state.cimageURL,
+            description:this.state.description,
+            price:this.state.price,
+            cakeName:this.state.cakeName,
+            ingrediants:this.state.ingrediants
+          };
+
+          console.log(cake);
+          axios.post( "http://localhost:9020/cakes/ncake", cake)
+          .then(response=>{
+            console.log(response)
+          }).catch(error=>{
+            console.log(error)
+          })
 
 
+
+
+     
+          
+         
+      };
+        
   
     render(){
+
 return(
     <div style={{padding:"20px"}}>
         <div className="section-title">
-                <h2>My Account</h2>
-                <p>Your Account Details</p>
+                <h2>Add Cake Model</h2>
+                <p>Add Your Cake Model</p>
             </div>
                      
-            <Form style={{padding:"20px"}}>
+            <Form style={{padding:"20px"}}   onSubmit={this.handleSubmit}>
 
 
                 
@@ -51,66 +109,64 @@ return(
                 
   <Form.Group as={Row} controlId="formHorizontalFName" >
     <Form.Label column sm={2}>
-     Name
+     Cake Name
     </Form.Label>
     <Col sm={10}>
-      <Form.Control type="text" placeholder= {this.state.customerID} defaultValue=  {this.state.customerID} />
+      <Form.Control type="text"  defaultValue=  "Cake Name" 
+      required onChange={this.onChangeCakeName} value={this.state.cakeName}
+      name='cakeName'
+      />
     </Col>
   </Form.Group> 
                 
 
   <Form.Group as={Row} controlId="formHorizontalLName" >
     <Form.Label column sm={2}>
-      Customer ID
+      ingrediants
     </Form.Label>
     <Col sm={10}>
-      <Form.Control type="text" placeholder={this.state.customerID} defaultValue={this.state.customerID}/>
+      <Form.Control type="text"  defaultValue=  "Cake Name" 
+      required onChange={this.onChangeIngrediants} value={this.state.ingrediants}  
+     />
     </Col>
   </Form.Group>
 
   <Form.Group as={Row} controlId="formHorizontalUserName" >
     <Form.Label column sm={2}>
-      Address
+      ImageURL
     </Form.Label>
     <Col sm={10}>
-      <Form.Control type="text" placeholder={this.state.address} defaultValue={this.state.address}/>
+    <Form.Control type="text"  defaultValue=  "Cake Name" 
+      required onChange={this.onChangecImageURL} value={this.state.cimageURL}  
+      name='cimageURL'/>
     </Col>
   </Form.Group>
 
   <Form.Group as={Row} controlId="formHorizontalPassword">
     <Form.Label column sm={2}>
-      Password
+      Description
     </Form.Label>
     <Col sm={10}>
-      <Form.Control type="password" placeholder="Password" defaultValue={this.state.password}/>
+    <Form.Control type="text"  defaultValue=  "Cake Name" 
+      required onChange={this.onChangeDescription} value={this.state.description}  
+     />
     </Col>
   </Form.Group>
 
   <Form.Group as={Row} controlId="formHorizontalTelephoneNumber">
     <Form.Label column sm={2}>
-      Mobile No.
+      Price
     </Form.Label>
     <Col sm={10}>
-      <Form.Control type="text" placeholder="Password" defaultValue={this.state.telephoneNum}/>
+    <Form.Control type="text"  defaultValue=  "Cake Name" 
+      required onChange={this.onChangePrice} value={this.state.price}  
+     />
     </Col>
   </Form.Group>
 
-  <Form.Group as={Row} controlId="formHorizontalDOB">
-    <Form.Label column sm={2}>
-      Email
-    </Form.Label>
-    <Col sm={10}>
-      <Form.Control type="email" placeholder="Email Address" defaultValue={this.state.email}/>
-    </Col>
-  </Form.Group>
-  <Form.Group as={Row} controlId="formHorizontalCheck">
-    <Col sm={{ span: 10, offset: 2 }}>
-      <Form.Check label="Remember me" />
-    </Col>
-  </Form.Group>
   <Form.Group as={Row}>
     <Col sm={{ span: 10, offset: 2 }}>
-      <Button type="submit" style={{backgroundColor:"red"}} onClick={this.update}>Update</Button>
+      <Button type="submit" style={{backgroundColor:"red"}} >Add</Button>
     </Col>
   </Form.Group>   
   

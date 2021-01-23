@@ -1,9 +1,5 @@
 
 import React, {Component} from 'react';
-
-
-
-
 import CustNav from './custNav.component';
 import CustDetails from './custDetails.component';
 

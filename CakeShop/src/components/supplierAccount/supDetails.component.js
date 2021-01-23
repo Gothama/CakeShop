@@ -1,6 +1,5 @@
 
 import React, {Component} from 'react';
-//import {Link} from 'react-router-dom';
 import {Tab,Row,Nav,Col} from 'react-bootstrap';
 import SupAccountDetails from './supAccountDetails.component';
 import SupOrder from './supOrder.component';
@@ -33,7 +32,7 @@ return(
           <SupOrder/>
         </Tab.Pane>
         <Tab.Pane eventKey="second">
-        <SupAccountDetails/>
+          <SupAccountDetails/>
         </Tab.Pane>
         <Tab.Pane eventKey="third">
           <SupAddCakeModel/>

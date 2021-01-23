@@ -7,6 +7,11 @@ import TopBar from './topbar.component'
 import Header from './header.component'
 import HeroSection from './heroSection.component'
 import "../assets/css/style.css"
+import { Icon, InlineIcon } from '@iconify/react';
+import location12Filled from '@iconify/icons-fluent/location-12-filled';
+import emailFill from '@iconify/icons-eva/email-fill';
+import phoneCallFill from '@iconify/icons-eva/phone-call-fill';
+import bxsTimeFive from '@iconify/icons-bx/bxs-time-five';
 
 
 export default class Contact extends Component{
@@ -39,30 +44,30 @@ return(
           <div className="col-lg-4">
             <div className="info">
               <div className="address">
-                <i className="icofont-google-map"></i>
+              <i><Icon icon={location12Filled} /></i>
                 <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>A/201, Galle Road, Moratuwa</p>
               </div>
 
               <div className="open-hours">
-                <i className="icofont-clock-time icofont-rotate-90"></i>
+                <i ><Icon icon={bxsTimeFive} /></i>
                 <h4>Open Hours:</h4>
                 <p>
-                  Monday-Saturday:<br/>
+                  24/7:<br/>
                   11:00 AM - 2300 PM
                 </p>
               </div>
 
               <div className="email">
-                <i className="icofont-envelope"></i>
+                <i><Icon icon={emailFill} /></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>infoCakeFactory@gamil.com</p>
               </div>
 
               <div className="phone">
-                <i className="icofont-phone"></i>
+                <i><Icon icon={phoneCallFill} /></i>
                 <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>+97011234544</p>
               </div>
 
             </div>

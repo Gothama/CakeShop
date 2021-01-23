@@ -11,10 +11,10 @@ export default class SupplierAccount extends Component{
 return(
     <div>
     <div style={{backgroundColor:"#14213d",paddingBottom:"100px" , paddingTop:"100px"}} >
-<SupNav/>
-<h1 className="container"style={{color:"white", paddingTop:"50px"}}>My Account</h1>
-<SupDetails/>
-</div>
+            <SupNav/>
+        <h1 className="container"style={{color:"white", paddingTop:"50px"}}>My Account</h1>
+            <SupDetails/>
+    </div>
 
     </div>
 

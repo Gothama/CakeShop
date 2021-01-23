@@ -30,7 +30,7 @@ return(
 <div className="container" data-aos="fade-up">
   <div className="section-title">
     <h2>Gallery</h2>
-    <p>Some photos from Our Restaurant</p>
+    <p>Some of our Cake Models by our Suppliers</p>
   </div>
 </div>
 

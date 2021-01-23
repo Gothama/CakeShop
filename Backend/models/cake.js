@@ -19,6 +19,7 @@ const cakeSchema = new mongoose.Schema({
     cImageUrl:{
         type:String,
         required:true
+
     },
 
     description:{
@@ -32,7 +33,7 @@ const cakeSchema = new mongoose.Schema({
 
     addedDate:{
         type:Date,
-        required:true,
+
        default:Date.now
     }
 });

@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-
 import {Navbar} from 'react-bootstrap';
-
 import image from "../../assets/img/logo.gif"
 
 export default class CustNav extends Component{

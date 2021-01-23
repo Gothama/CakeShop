@@ -35,7 +35,7 @@ router.post('/customerID/:customerID/:password', function(req,res) {
         .exec()
         .then(userValid =>{
             if( userValid ){
-                res.status(200).json({"Message": userValid});
+                res.status(200).send("successful");
             }else{
                 res.status(200).json({"Message": "unsuccessful"});
             }

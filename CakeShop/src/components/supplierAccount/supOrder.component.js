@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Table} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
 import axios from 'axios';
+import Moment from 'react-moment';
 
 
 
@@ -11,6 +12,10 @@ export default class SupOrder extends Component {
       }
       constructor(){
         super();
+        this.getAllorders();
+      }
+
+      getAllorders(){
         let supplierID = localStorage.getItem("supplierID");
         axios.get('http://localhost:9020/ordering/supplier/' + supplierID).then(res=>{
             console.log(res);
@@ -19,8 +24,14 @@ export default class SupOrder extends Component {
         }).catch(err => console.log(err));
       }
 
-
-
+   deleteAnOrder(id){
+    axios.post('http://localhost:9020/ordering/' + id).then(res=>{
+      console.log(res);
+       this.getAllorders();
+      //window.alert("Okay");
+  }).catch(err => console.log(err));
+         
+      }
 
 
     render() {
@@ -54,9 +65,15 @@ export default class SupOrder extends Component {
       <td>1</td>
       <td>{order.cakemodelID}</td>
       <td>{order.quantity}</td>
-      <td>{order.requiredDate}</td>
-      <td>{order.orderDate}</td>
-      <td><Button variant="danger">Cancel</Button> </td>
+      <td> <Moment format="YYYY/MM/DD">
+                {order.requiredDate}
+            </Moment>
+      </td>
+     <td> <Moment format="YYYY/MM/DD">
+                {order.orderDate}
+            </Moment>
+      </td>
+      <td><Button variant="danger" onClick={()=>this.deleteAnOrder(order._id)}>Cancel</Button> </td>
     </tr>
   )}
   </tbody>
@@ -69,12 +86,3 @@ export default class SupOrder extends Component {
     }
 }
 
-/*{ this.state.cakes.map(cake =>  
-              
-                  <CakeTile key={cake.id} cImageUrl = {cake.cImageUrl} 
-                  addedDate={cake.addedDate} 
-                  cakeName={cake.cakeName} 
-                  price={cake.price} 
-                  id={cake.id}/>
-              
-              )}*/

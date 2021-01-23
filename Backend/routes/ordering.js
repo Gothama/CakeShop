@@ -49,7 +49,7 @@ router.post('/norder', async(req,res) => {
         cakemodelID: req.body.cakemodelID,
         orderDate: req.body.orderDate,
         requiredDate: req.body.requiredDate,
-        quantity:req.body.quantity
+        quantity:"1"
     })
 
     try{
@@ -62,16 +62,34 @@ router.post('/norder', async(req,res) => {
     }
 })
 
+
+
+
 //delete the order
-router.delete('/:orderID', async(req,res) => {
+/*router.delete('/:orderID', async(req,res) => {
     try{
             const orderID = req.params.orderID;
            const order = await Orders.findByIdAndDelete({_id:orderID})
-           res.json("Successfull")
+           //res.json("Successfull")
+           res.send("Successfull")
     }catch(err){
         res.send('Error ' + err)
     }
   })
+*/
+
+router.post('/:orderID', function(req,res) {
+
+
+   const orderID = req.params.orderID;
+        
+        Orders.findByIdAndDelete({_id:orderID})
+        .then(userValid =>{
+            res.send("Successfull")
+        }).catch(err=>{
+        res.status(500).json(err);
+    })
+});
 
 
 module.exports = router

@@ -2,6 +2,12 @@ import React, {Component} from 'react';
 import "aos/dist/aos.css";
 import "../assets/css/style.css"
 import {Link} from 'react-router-dom';
+import { Icon, InlineIcon } from '@iconify/react';
+import facebookIcon from '@iconify/icons-raphael/facebook';
+
+import linkedinIcon from '@iconify/icons-grommet-icons/linkedin';
+
+import instagramWithCircle from '@iconify/icons-entypo-social/instagram-with-circle';
 
 
 export default class Footer extends Component{
@@ -23,11 +29,10 @@ return(
                 <strong>Email:</strong> cakefactory@gmail.com<br/>
               </p>
               <div className="social-links mt-3">
-                <Link to ="#" class="twitter"><i class="bx bxl-twitter"></i></Link>
-                <Link to ="#" class="facebook"><i class="bx bxl-facebook"></i></Link>
-                <Link to ="#" class="instagram"><i class="bx bxl-instagram"></i></Link>
-                <Link to ="#" class="google-plus"><i class="bx bxl-skype"></i></Link>
-                <Link to ="#" class="linkedin"><i class="bx bxl-linkedin"></i></Link>
+              <Link to ="#" ><i><Icon icon={facebookIcon} /></i></Link>
+              <Link to ="#" ><i><Icon icon={instagramWithCircle} /></i></Link>
+                <Link to ="#" class="instagram"><i><Icon icon={linkedinIcon} /></i></Link>
+    
               </div>
             </div>
           </div>

@@ -1,12 +1,32 @@
 import React, {Component} from 'react';
 import "aos/dist/aos.css";
 import "../assets/css/style.css"
+import CakeTile from './caketile.component';
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL : `http://localhost:9020/cakes/`
+})
 
 
 
 
 export default class WhyUs extends Component{
-  
+  state={
+    cakes:[]
+  }
+    constructor(){
+      super();
+      api.get('/',{
+        params:{
+            _limit:3
+        }}).then(res=>{
+        console.log(res.data)
+        this.setState({cakes:res.data})
+        })
+    }
+
+
     render(){
 return(
     <section id="why-us" className="why-us">
@@ -18,32 +38,16 @@ return(
         </div>
 
         <div className="row">
-
-          <div className="col-lg-4">
-            <div className="box" data-aos="zoom-in" data-aos-delay="100">
-              <span>01</span>
-              <h4>Lorem Ipsum</h4>
-              <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+              { this.state.cakes.map(cake =>  
+              
+                  <CakeTile key={cake.id} cImageUrl = {cake.cImageUrl} 
+                  addedDate={cake.addedDate} 
+                  cakeName={cake.cakeName} 
+                  price={cake.price} 
+                  id={cake.id}/>
+              
+              )}
             </div>
-          </div>
-
-          <div className="col-lg-4 mt-4 mt-lg-0">
-            <div className="box" data-aos="zoom-in" data-aos-delay="200">
-              <span>02</span>
-              <h4>Repellat Nihil</h4>
-              <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
-            </div>
-          </div>
-
-          <div className="col-lg-4 mt-4 mt-lg-0">
-            <div className="box" data-aos="zoom-in" data-aos-delay="300">
-              <span>03</span>
-              <h4> Ad ad velit qui</h4>
-              <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
-            </div>
-          </div>
-
-        </div>
 
       </div>
     </section>

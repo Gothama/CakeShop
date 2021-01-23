@@ -1,6 +1,5 @@
 
 import React, {Component} from 'react';
-//import {Link} from 'react-router-dom';
 import {Tab,Row,Nav,Col} from 'react-bootstrap';
 import CustAccountDetails from './custAccountDetails.component';
 import CustOrder from './custOrder.component';
