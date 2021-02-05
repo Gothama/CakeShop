@@ -156,22 +156,20 @@ export default class HeroSection extends Component{
  
     render(){
 return(
-<section id="hero" className="d-flex align-items-center">
-    <div className="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
-      <div className="row">
-        <div className="col-lg-8">
-          <h1>Welcome to <span>The Cake Factory</span></h1>
-          <h2>Delivering great cakes to your door step from bakers around Srilanka!</h2>
-
-          <div className="btns">
-            {localStorage.getItem("loggedIn") === "loggedIn"?<link to = ""></link>:<li onClick={this.signUp} className="btn-menu animated fadeInUp scrollto">Sign Up</li>}
+    <section id="hero" className="d-flex align-items-center">
+        <div className="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
+          <div className="row">
+            <div className="col-lg-8">
+              <h1>Welcome to <span>The Cake Factory</span></h1>
+              <h2>Delivering great cakes to your door step from bakers around Srilanka!</h2>
+              <div className="btns">
+                {localStorage.getItem("loggedIn") === "loggedIn"?<link to = ""></link>:<li onClick={this.signUp} 
+                className="btn-menu animated fadeInUp scrollto">Sign Up</li>}
+              </div>
+            </div>
           </div>
         </div>
-       
-
-      </div>
-    </div>
-  </section>
+    </section>
    
 );
 }

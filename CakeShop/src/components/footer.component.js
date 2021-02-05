@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import "aos/dist/aos.css";
 import "../assets/css/style.css"
 import {Link} from 'react-router-dom';
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon} from '@iconify/react';
 import facebookIcon from '@iconify/icons-raphael/facebook';
 
 import linkedinIcon from '@iconify/icons-grommet-icons/linkedin';

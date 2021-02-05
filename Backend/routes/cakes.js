@@ -22,8 +22,6 @@ router.get('/', async(req,res) => {
     }
 })
 
-
-
 //get the cake model details
 router.get('/:cakeID', async(req,res) => {
   try{
@@ -45,6 +43,8 @@ router.delete('/:cakeID', async(req,res) => {
       res.send('Error ' + err)
   }
 })
+
+
 
 router.route('/ncake').post(function (req,res) {
   console.log("Apppooo")

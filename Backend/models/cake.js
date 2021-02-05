@@ -6,7 +6,6 @@ const cakeSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-
     cakeName: {
         type:String,
         required:true
@@ -15,13 +14,11 @@ const cakeSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    
     cImageUrl:{
         type:String,
         required:true
 
     },
-
     description:{
         type:String,
         required:true
@@ -30,7 +27,6 @@ const cakeSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-
     addedDate:{
         type:Date,
 

@@ -18,6 +18,9 @@ import SupplierAccount from './components/supplierAccount/supplierAccount.compon
 import signInOut from './components/signIn.component';
 import CustomerAccount from './components/customerAccount/customerAccount.component'
 import AdminDashboard from './components/Admin/AdminDashboard.component'
+//import signUp from './components/signUp.component';
+import signUp from './components/signup2.component';
+
 
 function App() {
 
@@ -32,6 +35,7 @@ function App() {
       <Route path ="/customerAccount" exact component={CustomerAccount}/>
       <Route path ="/supplierAccount" exact component={SupplierAccount}/>
       <Route path = "/Admin" exact component ={AdminDashboard}/>
+      <Route path = "/SignUp" exact component ={signUp}/>
     </Router>
   );
 }

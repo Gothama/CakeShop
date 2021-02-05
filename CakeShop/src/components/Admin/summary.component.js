@@ -32,7 +32,7 @@ export default class Summary extends Component{
   getCountSuppliers(){
     axios.get('http://localhost:9020/supplier/count').then(res=>{
         console.log(res);
-        const countSupplier = res.data;
+       // const countSupplier = res.data;
         this.setState({ supplierCount:res.data });
     }).catch(err => console.log(err));
   }
@@ -40,7 +40,7 @@ export default class Summary extends Component{
   getCountOrders(){
     axios.get('http://localhost:9020/ordering/count').then(res=>{
         console.log(res);
-        const countOrder = res.data;
+       // const countOrder = res.data;
         this.setState({ orderCount:res.data });
     }).catch(err => console.log(err));
   }

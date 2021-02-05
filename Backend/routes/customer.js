@@ -45,7 +45,6 @@ router.get('/count', async(req,res) => {
     }
 })
 
-
 // get the customer password for customer ID
 router.post('/customerID/:customerID/:password', function(req,res) {
 

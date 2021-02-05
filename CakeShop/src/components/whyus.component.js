@@ -9,8 +9,6 @@ const api = axios.create({
 })
 
 
-
-
 export default class WhyUs extends Component{
   state={
     cakes:[]
@@ -40,11 +38,15 @@ return(
         <div className="row">
               { this.state.cakes.map(cake =>  
               
-                  <CakeTile key={cake.id} cImageUrl = {cake.cImageUrl} 
-                  addedDate={cake.addedDate} 
-                  cakeName={cake.cakeName} 
-                  price={cake.price} 
-                  id={cake.id}/>
+                 
+              <CakeTile key={cake.id} cImageUrl = {cake.cImageUrl} 
+              addedDate={cake.addedDate} 
+              cakeName={cake.cakeName} 
+              price={cake.price} 
+              id={cake.id}
+              ingrediants = {cake.ingrediants}
+              description = {cake.description}
+              />
               
               )}
             </div>

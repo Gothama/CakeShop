@@ -21,6 +21,15 @@
     background: none;
   }
   
+  .contS{
+    overflow: hidden;
+    position: relative;
+    width: 900px;
+    height: 600px;
+    background: #fff;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+
   .cont{
     overflow: hidden;
     position: relative;
@@ -47,14 +56,14 @@
     text-align: center;
   }
   
-  .cont label{
+  .cont label, .contS label{
     display: block;
     width: 260px;
     margin: 25px auto 0;
     text-align: center;
   }
   
-  .cont label span{
+  .cont label span,  .contS label span{
     font-size: 14px;
     font-weight: 600;
     color: #505f75;
@@ -144,7 +153,7 @@
     transition: transform 1.2s ease-in-out;
   }
   
-  .cont.s-signup .sub-cont{
+  .cont.s-signup .sub-cont,  .contS.s-signup .sub-cont{
     -webkit-transform:translate3d(-640px, 0, 0);
             transform:translate3d(-640px, 0, 0);
   }
@@ -183,7 +192,7 @@
     background: rgba(0,0,0,0.3);
   }
   
-  .cont.s-signup .img:before{
+  .cont.s-signup .img:before,  .contS.s-signup .img:before{
     -webkit-transform:translate3d(640px, 0, 0);
             transform:translate3d(640px, 0, 0);
   }
@@ -212,7 +221,7 @@
     line-height: 1.5;
   }
   
-  .cont.s-signup .img-text.m-up{
+  .cont.s-signup .img-text.m-up,  .contS.s-signup .img-text.m-up{
     -webkit-transform:translateX(520px);
             transform:translateX(520px);
   }
@@ -222,7 +231,7 @@
             transform:translateX(-520px);
   }
   
-  .cont.s-signup .img-text.m-in{
+  .cont.s-signup .img-text.m-in,  .contS.s-signup .img-text.m-in{
     -webkit-transform:translateX(0);
             transform:translateX(0);
   }
@@ -234,7 +243,7 @@
             transition-timing-function:ease-out;
   }
   
-  .cont.s-signup .sign-in{
+  .cont.s-signup .sign-in,  .contS.s-signup .sign-in{
     -webkit-transition-timing-function:ease-in-out;
             transition-timing-function:ease-in-out;
     -webkit-transition-duration:1.2s;
@@ -291,12 +300,12 @@
             transform:translateY(-72px);
   }
   
-  .cont.s-signup .img-btn span.m-in{
+  .cont.s-signup .img-btn span.m-in,  .contS.s-signup .img-btn span.m-in{
     -webkit-transform:translateY(0);
             transform:translateY(0);
   }
   
-  .cont.s-signup .img-btn span.m-up{
+  .cont.s-signup .img-btn span.m-up,  .contS.s-signup .img-btn span.m-up{
     -webkit-transform:translateY(72px);
             transform:translateY(72px);
   }
@@ -306,7 +315,7 @@
             transform:translate3d(-900px, 0, 0);
   }
   
-  .cont.s-signup .sign-up{
+  .cont.s-signup .sign-up,  .contS.s-signup .sign-up{
     -webkit-transform:translate3d(0, 0, 0);
             transform:translate3d(0, 0, 0);
   }

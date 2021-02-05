@@ -7,7 +7,7 @@ import TopBar from './topbar.component'
 import Header from './header.component'
 import HeroSection from './heroSection.component'
 import "../assets/css/style.css"
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import location12Filled from '@iconify/icons-fluent/location-12-filled';
 import emailFill from '@iconify/icons-eva/email-fill';
 import phoneCallFill from '@iconify/icons-eva/phone-call-fill';

@@ -53,11 +53,9 @@ return(
     <div id="topbar" className="d-flex align-items-center fixed-top">
     <div className="container d-flex">
       <div className="contact-info mr-auto">
-        <i className="icofont-phone"></i> +97-011-23342355
-        <span className="d-none d-lg-inline-block"><i className="icofont-clock-time icofont-rotate-180"></i> Mon-Sat - 9.00am - 11pm</span>
+
       </div>
       <div className="languages">
-       
       </div>
     </div>
   </div>

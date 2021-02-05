@@ -20,12 +20,11 @@ return(
 
         <Header/>
         <HeroSection/>
-       
         <WhyUs/>
         <UserDetails/>
         <CakeTypes/>
-       <Gallery/>
-       <Testimonials/>
+        <Gallery/>
+        <Testimonials/>
         <Footer/>
        
     </div>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
 import axios from 'axios';
-import Moment from 'react-moment';
+
 
 
 export default class AllCustomers extends Component{

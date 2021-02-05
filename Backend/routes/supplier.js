@@ -1,9 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const Supplier = require('../models/supplier')
-
-
-
 //get all the Suppliers
 router.get('/', async(req,res) => {
     try{
@@ -13,7 +10,6 @@ router.get('/', async(req,res) => {
         res.send('Error ' + err)
     }
 })
-
 //get all the count
 router.get('/count', async(req,res) => {
     try{
@@ -23,9 +19,6 @@ router.get('/count', async(req,res) => {
         res.send('Error ' + err)
     }
 })
-
-
-
 // get the supplier password for customer ID
 router.post('/supplierID/:supplierID/:password', function(req,res) {
     
@@ -90,9 +83,7 @@ router.patch('/:supplierID', async(req,res) => {
                     address:req.body.address,
                     email:req.body.email,
                     password:req.body.password
-                
-                }
-                    
+                }  
             })
            res.json("done 1")
     }catch(err){

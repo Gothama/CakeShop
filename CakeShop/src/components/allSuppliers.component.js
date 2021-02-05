@@ -36,7 +36,7 @@ return(
           <div className="container" data-aos="fade-up">
             <div className="section-title">
               <h2>Why Us</h2>
-              <p>Why Choose Our Restaurant</p>
+              <p>All Cake Models Added by our Suppliers</p>
             </div>
             <div className="row">
               { this.state.cakes.map(cake =>  

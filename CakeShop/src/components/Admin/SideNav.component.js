@@ -1,7 +1,7 @@
 
 import React, {Component} from 'react';
 import {Nav, Tab, Col, Row} from 'react-bootstrap';
-import { Icon } from '@iconify/react';
+//import { Icon } from '@iconify/react';
 //import bxUser from '@iconify-icons/bx/bx-user';
 /*import bxUser from '@iconify/icons-bx/bx-user';
 import accountHeart from '@iconify/icons-mdi/account-heart';
